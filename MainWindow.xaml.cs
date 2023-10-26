@@ -45,10 +45,11 @@ namespace TextChanger
             cbBackgroundText.SelectedItem = "BurlyWood";
             cbBorderColor.SelectedItem = "Crimson";
 
-            cbTextAlignment.Items.Add("Center");
-            cbTextAlignment.Items.Add("Justify");
-            cbTextAlignment.Items.Add("Left");
-            cbTextAlignment.Items.Add("Rigth");
+            var textAlignmentCollection = typeof(TextAlignment).GetEnumNames();
+            foreach (var textAlignment in textAlignmentCollection)
+            {
+                cbTextAlignment.Items.Add(textAlignment);
+            }
             cbTextAlignment.SelectedItem= "Justify";
 
             // Биндинг на размер шрифта.
