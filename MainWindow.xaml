@@ -16,15 +16,14 @@
             <TextBlock x:Name="tblText" TextWrapping="Wrap">
                 "Данный сайт посвящен различным языкам и технологиям программирования, компьютерам, мобильным платформам и ИТ-технологиям. Здесь будут выкладываться различные руководства и учебные материалы, статьи и примеры."
             </TextBlock>
-
         </Border>
         <Border Margin="5" BorderThickness="1" BorderBrush="Black" CornerRadius="5">
             <Grid Margin="5" Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1.1*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                     <RowDefinition Height="1.4*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -42,7 +41,7 @@
                 <StackPanel Grid.Row="1" Orientation="Vertical">
                     <Label FontStyle="Italic">Начертания</Label>
                     <RadioButton Name="rbStyleNormal" IsChecked="True" Checked="onNormalCheck">Нормальный</RadioButton>
-                    <RadioButton Name="rbStyleItalic" Checked="onItalicCheck">Наколоннеый</RadioButton>
+                    <RadioButton Name="rbStyleItalic" Checked="onItalicCheck">Наколоненный</RadioButton>
                 </StackPanel>
                 <!-- Радио кнопки с изменением веса шрифта-->
                 <StackPanel Grid.Row="2" Orientation="Vertical">
@@ -66,31 +65,32 @@
                     <Label FontStyle="Italic">Цвет заливкии</Label>
                     <ComboBox Name="cbBackgroundText"></ComboBox>
                 </StackPanel>
-                <!-- Комбобос с выравниванием-->
+                <!-- Комбобокс с выравниванием-->
                 <StackPanel Grid.Row="6" Orientation="Vertical">
                     <Label  FontStyle="Italic">Выравнивание</Label>
                     <ComboBox Name="cbTextAlignment"></ComboBox>
                 </StackPanel>
+                <!-- Комбобокс с  цветом рамки -->
                 <StackPanel Grid.Row="7" Orientation="Vertical">
                     <Label FontStyle="Italic">Цвет рамки</Label>
                     <ComboBox Name="cbBorderColor"></ComboBox>
                 </StackPanel>
+                <!-- Слайдер для толщины рамки -->
                 <StackPanel Grid.Row="8" Orientation="Vertical">
                     <Label FontStyle="Italic">Толщина рамки</Label>
                     <Slider Minimum="1" Maximum="32" Value="5"  TickFrequency="1" IsSnapToTickEnabled="True" Name="sBorderThickness"></Slider>
                 </StackPanel>
+                <!-- Слайдер для скругления углов -->
                 <StackPanel Grid.Row="9" Orientation="Vertical">
                     <Label FontStyle="Italic">Скругления углов</Label>
                     <Slider Minimum="1" Maximum="32" Value="5"  TickFrequency="1" IsSnapToTickEnabled="True" Name="sCornerRadius"></Slider>
                 </StackPanel>
+                <!-- Слайдер для отсупов текста-->
                 <StackPanel Grid.Row="10" Orientation="Vertical">
                     <Label FontStyle="Italic">Отступ</Label>
                     <Slider Minimum="1" Maximum="32" Value="10"  TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="sMargin_ValueChanged" Name="sMargin"></Slider>
                 </StackPanel>
             </Grid>
         </Border>
-        
-       
-        
     </Grid>
 </Window>
