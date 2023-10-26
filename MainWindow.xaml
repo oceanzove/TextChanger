@@ -1,0 +1,94 @@
+﻿<Window x:Class="TextChanger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextChanger"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!-- Блок с текстом который мы изменяем -->
+        <Border Margin="10" Name="bUnderText" Grid.Column="1">
+            <TextBlock x:Name="tblText" TextWrapping="Wrap">
+                "Данный сайт посвящен различным языкам и технологиям программирования, компьютерам, мобильным платформам и ИТ-технологиям. Здесь будут выкладываться различные руководства и учебные материалы, статьи и примеры."
+            </TextBlock>
+
+        </Border>
+        
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1.1*"></RowDefinition>
+                <RowDefinition Height="1.4*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <!-- Слайдер размера шрифта -->
+            <StackPanel Grid.Row="0" Orientation="Vertical">
+                <Label FontStyle="Italic">Размер шрифта</Label>
+                <Slider Minimum="10" Maximum="32" Value="20"  TickFrequency="1" IsSnapToTickEnabled="True" Name="sValueChanger"></Slider>
+            </StackPanel>
+            <!-- Радио кнопки с изменением начертания-->
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Label FontStyle="Italic"> Начертания</Label>
+                <RadioButton Name="rbStyleNormal" IsChecked="True" Checked="onNormalCheck"> Нормальный</RadioButton>
+                <RadioButton Name="rbStyleItalic" Checked="onItalicCheck"> Наколоннеый</RadioButton>
+            </StackPanel>
+            <!-- Радио кнопки с изменением веса шрифта-->
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <Label FontStyle="Italic"> Вес </Label>
+                <RadioButton Name="rbWeightLight" Checked="onWeightLight">Тонкий</RadioButton>
+                <RadioButton Name="rbWeightNormal" IsChecked="True" Checked="onWeightNormal">Нормальный</RadioButton>
+                <RadioButton Name="rbWeightBold" Checked="onWeightBold">Жирный</RadioButton>
+            </StackPanel>
+            <!-- Комбобокс с шрифтами -->
+            <StackPanel Grid.Row="3" Orientation="Vertical">
+                <Label FontStyle="Italic"> Шрифт </Label>
+                <ComboBox Name="cbFonts" ></ComboBox>
+            </StackPanel>
+            <!-- Комбобокс с цветами шрифта -->
+            <StackPanel Grid.Row="4" Orientation="Vertical">
+                <Label FontStyle="Italic"> Цвет текста</Label>
+                <ComboBox Name="cbForegroundText"></ComboBox>
+            </StackPanel>
+            <!-- Комбобокс с цветами заливки-->
+            <StackPanel Grid.Row="5" Orientation="Vertical">
+                <Label FontStyle="Italic"> Цвет заливкии</Label>
+                <ComboBox Name="cbBackgroundText"></ComboBox>
+            </StackPanel>
+            <!-- Комбобос с выравниванием-->
+            <StackPanel Grid.Row="6" Orientation="Vertical">
+                <Label  FontStyle="Italic"> Выравнивание</Label>
+                <ComboBox Name="cbTextAlignment"></ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Orientation="Vertical">
+                <Label FontStyle="Italic"> Цвет рамки</Label>
+                <ComboBox Name="cbBorderColor"></ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Orientation="Vertical">
+                <Label FontStyle="Italic"> Толщина рамки</Label>
+                <Slider Minimum="1" Maximum="32" Value="5"  TickFrequency="1" IsSnapToTickEnabled="True" Name="sBorderThickness"></Slider>
+            </StackPanel>
+            <StackPanel Grid.Row="9" Orientation="Vertical">
+                <Label FontStyle="Italic"> Скругления углов</Label>
+                <Slider Minimum="1" Maximum="32" Value="5"  TickFrequency="1" IsSnapToTickEnabled="True" Name="sCornerRadius"></Slider>
+            </StackPanel>
+            <StackPanel Grid.Row="10" Orientation="Vertical">
+                <Label FontStyle="Italic">Отступ</Label>
+                <Slider Minimum="1" Maximum="32" Value="10"  TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="sMargin_ValueChanged" Name="sMargin"></Slider>
+            </StackPanel>
+        </Grid>
+       
+        
+    </Grid>
+</Window>
